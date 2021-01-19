@@ -1042,7 +1042,8 @@ body {
 
 .article-entry .highlight .line {
   color: #000000;
-  min-height: 19px
+  min-height: 19px;
+  font-size: 18px
 }
 
 .article-entry .gist {
