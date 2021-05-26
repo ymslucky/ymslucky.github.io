@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2021 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="date: 2021-05-02 10:20:32tags:    - Java基础    - 线程    - 集合 Java知识点一、Java基础1、语法①  final 关键字应用场景：可以修饰类、方法、变量。 当使用final修饰类时：  该类不能被继承  当使用final修饰方法时：  该方法不能被继承类重写（覆盖、修改含义）  当私用final修饰变量时：  对于基本数据类型，其数值在初">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2021/index.html">
+<meta property="og:url" content="http://example.com/2021/05/26/Java%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="date: 2021-05-02 10:20:32tags:    - Java基础    - 线程    - 集合 Java知识点一、Java基础1、语法①  final 关键字应用场景：可以修饰类、方法、变量。 当使用final修饰类时：  该类不能被继承  当使用final修饰方法时：  该方法不能被继承类重写（覆盖、修改含义）  当私用final修饰变量时：  对于基本数据类型，其数值在初">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-05-26T01:33:32.875Z">
+<meta property="article:modified_time" content="2021-05-26T01:38:17.577Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -140,160 +144,199 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java知识点" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+		
+
+			
+				<p>date: 2021-05-02 10:20:32<br>tags:<br>    - Java基础<br>    - 线程<br>    - 集合</p>
+<h1 id="Java知识点"><a href="#Java知识点" class="headerlink" title="Java知识点"></a>Java知识点</h1><h2 id="一、Java基础"><a href="#一、Java基础" class="headerlink" title="一、Java基础"></a>一、Java基础</h2><h3 id="1、语法"><a href="#1、语法" class="headerlink" title="1、语法"></a>1、语法</h3><h4 id="①-final-关键字"><a href="#①-final-关键字" class="headerlink" title="①  final 关键字"></a>①  final 关键字</h4><p><strong>应用场景</strong>：可以修饰类、方法、变量。</p>
+<p>当使用final修饰类时：</p>
+<ul>
+<li>该类不能被继承</li>
+</ul>
+<p>当使用final修饰方法时：</p>
+<ul>
+<li>该方法不能被继承类重写（覆盖、修改含义）</li>
+</ul>
+<p>当私用final修饰变量时：</p>
+<ul>
+<li>对于基本数据类型，其数值在初始化后，便无法被修改</li>
+<li>对于引用类型，在其初始化后，便无法被指向另一个对象，但对象的内容可以被修</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> A a = <span class="keyword">new</span> A();</span><br><span class="line">    System.out.println(a.val);	<span class="comment">//	1</span></span><br><span class="line"></span><br><span class="line">    changeValue(a);</span><br><span class="line">    System.out.println(a.val);	<span class="comment">//	999</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">changeValue</span><span class="params">(A a)</span></span>&#123;</span><br><span class="line">    a.val = <span class="number">999</span>;</span><br><span class="line">    a = <span class="keyword">new</span> A();</span><br><span class="line">    a.val = <span class="number">100</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> val = <span class="number">1</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">a</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="②-hashCode-与equals"><a href="#②-hashCode-与equals" class="headerlink" title="②  hashCode()与equals()"></a>②  hashCode()与equals()</h4><p><strong>作用</strong>：</p>
+<ul>
+<li>hashCode()：获取对象的哈希码。</li>
+<li>equals(Object o)：用来判断两个对象是否相等。</li>
+</ul>
+<p><strong>特征</strong>：</p>
+<ul>
+<li>如果两个对象相等，hashCode必定相等</li>
+<li>如果两个对象相等，则其中任意一个对象调用equals()必定返回true</li>
+<li>如果两个对象的hashCode相等，则他们不一定相等（哈希冲突）</li>
+</ul>
+<p><strong>使用场景</strong>：</p>
+<p>两个方法都可以用来比较对象是否相等，而hashCode()效率高、结果不可靠，equals()效率低、结果可靠，所以在日常使用中，一般先进行hashCode判断，若相等，再进行equals判断，这样既提高了效率，也保证了结果的正确性。</p>
+<h3 id="2、集合"><a href="#2、集合" class="headerlink" title="2、集合"></a>2、集合</h3><h4 id="①-HashMap数据结构"><a href="#①-HashMap数据结构" class="headerlink" title="①  HashMap数据结构"></a>①  HashMap数据结构</h4><p><strong>定义</strong>：哈希表，又称散列表，是一种存储Key-Value键值对的集合，哈希表中的元素是无序且唯一的。</p>
+<p><strong>存储结构</strong>：</p>
+<p>哈希表的主干是顺序存储（数组），枝干是链式存储（链表）。即哈希表是一个数组，但其中的每个元素都是一个链表。在JDK1.8中，若链表的长度超过阈值（8）时，会自动转换为红黑树，这样会大大减少查询的时间。</p>
+<p><strong>扩容机制</strong>：</p>
+<ul>
+<li><p>在HashMap初始化时，默认容量为16，若传入自定义容量myCapacity，则会计算大于myCapacity的最小2的幂。</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * The default initial capacity - MUST be a power of two.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_INITIAL_CAPACITY = <span class="number">1</span> &lt;&lt; <span class="number">4</span>; <span class="comment">// aka 16</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>加载因子为0.75，若HashMap的元素数量达到容量的0.75，则会将容量扩容至大于当前容量capacity的最小2的幂，同时会重新构造HashMap。</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * The load factor used when none specified in constructor.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">float</span> DEFAULT_LOAD_FACTOR = <span class="number">0.75f</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>加载因子（load_factor）是已存入元素数量（size）与 Hash空间容量（capacity）的比值，load_factor越小发生Hash冲突的可能就越小，但浪费的内存空间就越大，若加载因子为0.5，则元素数量达到一半时，就会扩容，重新构造Map，极其浪费内存空间；若加载因子为1，则元素数量只有达到容量上限，才会扩容，那么链表（红黑树）的长度就会很长，数据操作的效率会非常慢。加载因子load_factor设置为0.75是折衷的办法，既不过于浪费内存，又不会使数据的操作效率过低。</p>
+</li>
+<li><p>在使用HashMap时，尽量预估需要使用的容量大小myCapacity，初始化容量为 myCapacity / load_factor + 1。</p>
+</li>
+</ul>
+<p><strong>哈希冲突</strong>：</p>
+<p>如果两个不同的元素，通过哈希函数得出的实际存储地址相同，则哈希表通过在同一位置构建元素链表来解决，这种方式成为<strong>链地址法</strong>。</p>
+<p><strong>注</strong>：</p>
+<ul>
+<li>HashMap允许Key为null值，但只能存在一个Key为null值。</li>
+<li>Key为null的元素，默认放在数组首位（table[0]）。</li>
+<li>HashMap允许存在多个null值。</li>
+</ul>
+<h3 id="3、多线程"><a href="#3、多线程" class="headerlink" title="3、多线程"></a>3、多线程</h3><p>参考：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/6aff628d05fb">https://www.jianshu.com/p/6aff628d05fb</a></p>
+<h4 id="①-线程的实现方式"><a href="#①-线程的实现方式" class="headerlink" title="①  线程的实现方式"></a>①  线程的实现方式</h4><ul>
+<li>继承Thread类：直接继承Thread类，即可实现线程的创建。</li>
+<li>实现Runnable接口：在线程任务不需要返回值的时候，可以选择这种方式。</li>
+<li>实现Callable接口：线程任务需要返回值，使用FutureTask获取返回值。</li>
+</ul>
+<h4 id="②-线程与进程"><a href="#②-线程与进程" class="headerlink" title="②  线程与进程"></a>②  线程与进程</h4><p><strong>线程</strong>：</p>
+<p>线程时程序执行流中单一的顺序控制流程，是程序执行流的最小单元，是处理器调度和分派的最小单位。</p>
+<p><strong>进程</strong>：</p>
+<p>进程是具有一定独立功能的程序在一个数据集上的一次动态执行过程，是操作系统进行分配资源和任务调度的最小单位。</p>
+<p><strong>区别</strong>：</p>
+<ul>
+<li>线程是程序执行（CPU调度）的最小单位，进程是操作系统分配资源的最小单位。</li>
+<li>一个进程由一个或多个线程组成，线程是一个进程中代码的不同执行路线。</li>
+<li>进程之间相互独立，但同一进程下的各个线程之间共享程序的内存空间（代码段、数据集、堆等）及一些进程级资源（打开文件、信号等），某进程内的线程在其它进程不可见。</li>
+<li>调度和切换：线程上下文比进程上下文切换要快得多。</li>
+</ul>
+<h4 id="③-线程的生命周期"><a href="#③-线程的生命周期" class="headerlink" title="③  线程的生命周期"></a>③  线程的生命周期</h4><ul>
+<li>新建（NEW）：构造了thread实例，但是还没有start</li>
+<li>可运行（RUNNABLE）：线程正在运行或者正等待被cpu执行</li>
+<li>阻塞（BLOCKED）：线程调用synchronized关键字等待获取monitor锁</li>
+<li>无限期等待（WAITING）：线程调用了无超时的wait、join、park方法</li>
+<li>有限期等待（TIMED_WAITING）：线程调用了有超时的wait、sleep、join、parkNanos、parkUntil方法</li>
+<li>死亡（TERMINATED）：线程终止/完成了运行</li>
+</ul>
+<h4 id="④-Thread-sleep-long-millis-的作用"><a href="#④-Thread-sleep-long-millis-的作用" class="headerlink" title="④  Thread.sleep(long millis) 的作用"></a>④  Thread.sleep(long millis) 的作用</h4><p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ILove/archive/2008/04/07/1140419.html">https://www.cnblogs.com/ILove/archive/2008/04/07/1140419.html</a></p>
+<ul>
+<li>使当前线程睡眠，让其他线程获得运行的机会。但如果当前线程已获取锁，则sleep不会让出锁。</li>
+<li>线程睡眠到期会自动苏醒，返回到可运行状态（就绪），不是运行状态。millis是线程睡眠的最短时间，最长时间不确定，所以sleep并不能作为精确的时间控制。</li>
+<li>sleep是静态方法，只能控制当前正在运行的线程。</li>
+<li>sleep可以理解为当前线程在millis时间内，不参与CPU竞争。</li>
+</ul>
+<h4 id="⑤-t-join-与Thread-yield"><a href="#⑤-t-join-与Thread-yield" class="headerlink" title="⑤ t.join()与Thread.yield()"></a>⑤ t.join()与Thread.yield()</h4><p>**join()**：</p>
+<p>该方法作用是当前线程等待某个线程结束后再继续执行后续代码。</p>
+<p>**yield()**：</p>
+<p>该方法作用是让当前线程放弃cpu，并等待cpu重新调度（当前线程可能再次获得cpu)。通俗点的说法是给其它线程一个机会，让大家回到同一起跑线，至于谁被cpu选中，看个人造化。</p>
+<h4 id="⑥-并发与并行"><a href="#⑥-并发与并行" class="headerlink" title="⑥  并发与并行"></a>⑥  并发与并行</h4><p><strong>并发</strong>：逻辑上同时处理多个任务，而物理上为交替处理多个任务。</p>
+<p><strong>并行</strong>：逻辑上与物理上都是同时处理多个任务。</p>
+<h4 id="⑦-线程池"><a href="#⑦-线程池" class="headerlink" title="⑦  线程池"></a>⑦  线程池</h4><p>在程序中，我们需要频繁使用新的线程执行任务，而创建与销毁线程的成本是很高的，所以线程池就出现了。线程池在创建时默认构建好一定数量的线程资源，在提交任务时，直接调用已创建好的线程执行任务，在任务执行结束后，</p>
+<p><strong>线程池的优点</strong>：</p>
+<ul>
+<li>降低系统资源消耗，通过重用已存在的线程，降低线程创建和销毁造成的消耗</li>
+<li>提高系统响应速度，当有任务到达时，通过复用已存在的线程，无需等待新线程的创建便能立即执行</li>
+<li>方便线程并发数的管控。因为线程若是无限制的创建，可能会导致内存占用过多而产生OOM，并且会造成cpu过度切换</li>
+<li>提供更强大的功能，延时定时线程池</li>
+</ul>
+<h4 id="⑧-线程池的实现"><a href="#⑧-线程池的实现" class="headerlink" title="⑧  线程池的实现"></a>⑧  线程池的实现</h4><p>Executors类提供了一些静态工厂，生成常用的线程池。</p>
+<p><strong>newSingleThreadExecutor</strong>：</p>
+<p>创建一个只有一个线程的线程池，如果这个线程因为异常结束，那么会有一个新的线程来替代他。此线程池保证所有任务按照任务提交的顺序执行。</p>
+<p><strong>newFixedThreadPool</strong>：</p>
+<p>创建固定大小的线程池。每次提交一个任务就会创建一个线程，直到线程池的最大大小。线程池的大小一旦达到最大值就会保持不变，如果某个线程因为执行异常而结束，那么线程池会补充一个新线程。</p>
+<p><strong>newCachedThreadPool</strong>：</p>
+<p>创建一个可缓存的线程池。如果线程池的大小超过了处理任务所需要的线程，那么就会回收部分空闲（60秒不执行任务）的线程，当任务数增加时，此线程池又可以智能的添加新线程来处理任务。此线程池不会对线程池大小做限制，线程池大小完全依赖于操作系统（或者说JVM）能够创建的最大线程大小。</p>
+<p><strong>newScheduledThreadPool</strong>：</p>
+<p>适用于执行延时或者周期性任务。</p>
+<h3 id="4、IO"><a href="#4、IO" class="headerlink" title="4、IO"></a>4、IO</h3><h3 id="5、网络"><a href="#5、网络" class="headerlink" title="5、网络"></a>5、网络</h3><h2 id="二、JVM"><a href="#二、JVM" class="headerlink" title="二、JVM"></a>二、JVM</h2>
+			
+		
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/05/26/Java%E7%9F%A5%E8%AF%86%E7%82%B9/" class="archive-article-date">
-  	<time datetime="2021-05-26T01:33:32.875Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-26</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9F%A5%E8%AF%86%E7%82%B9/" class="archive-article-date">
-  	<time datetime="2021-05-26T01:33:32.875Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-26</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9F%A5%E8%AF%86%E7%82%B9/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/22/%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B0-191/" class="archive-article-date">
-  	<time datetime="2021-03-22T06:11:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-22</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/22/%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B0-191/">刷题日记-191</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">位运算</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/19/%E6%95%B0%E7%BB%84%E4%B8%8E%E9%9B%86%E5%90%88%E7%9A%84%E8%BD%AC%E6%8D%A2/" class="archive-article-date">
-  	<time datetime="2021-01-19T02:35:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/19/%E6%95%B0%E7%BB%84%E4%B8%8E%E9%9B%86%E5%90%88%E7%9A%84%E8%BD%AC%E6%8D%A2/">数组与集合</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">集合</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+  
+    <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div>
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+        var gitalk = new Gitalk({
+        clientID: '9ca2e5b6b943597f0623',
+        clientSecret: '3aad91742f2b699e69fa4030e38046f1e3cbacff',
+        repo: 'ymslucky.github.io',
+        owner: 'ymslucky',
+        admin: ['ymslucky'],
+        id: 'Wed May 26 2021 09:33:32 GMT+0800',
+        distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container')
+}
+</script>
+  
 
 
           </div>
@@ -333,8 +376,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
